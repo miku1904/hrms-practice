@@ -1,0 +1,46 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+}
+
+.maincontain {
+    width: 100%;
+    border: 2px solid black;
+    padding: 123px 75px;
+}
+
+.login {
+    min-width: 100%;
+}
+
+.leftsection {
+    height: 76vh;
+    background: #3F51B5;
+    border-radius: 15px;
+}
+
+.logotext {
+    padding: 50px 50px 50px;
+}
+
+.hrmstext {
+    margin-top: 120px;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 75px;
+}
