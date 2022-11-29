@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "helvetica";
+    src: url("../../assets/fonts/helvetica_condensed.woff");
+}
+
+@font-face {
+    font-family: "robotocond";
+    src: url("../../assets/fonts/RobotoCondensed-Bold.ttf");
+}
+
+
+
 p,
 h1,
 h2,
@@ -14,33 +26,175 @@ h6 {
 
 body {
     margin: 0;
+    padding: 0px;
 
 }
 
 .maincontain {
     width: 100%;
-    border: 2px solid black;
-    padding: 123px 75px;
+    height: 100%;
+    background-color: #F6F8FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 .login {
-    min-width: 100%;
-}
-
-.leftsection {
-    height: 76vh;
+    max-width: 1289px;
+    position: relative;
+    margin: auto;
     background: #3F51B5;
     border-radius: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
+
+.leftsection {}
 
 .logotext {
     padding: 50px 50px 50px;
 }
 
 .hrmstext {
+    color: #FFFFFF;
+    font-family: "helvetica";
     margin-top: 120px;
     font-style: italic;
     font-weight: 700;
     font-size: 72px;
     line-height: 75px;
+
+}
+
+.hrmstext span {
+    font-family: "helvetica";
+    font-style: italic;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 75px;
+    color: #FFB901;
+}
+
+
+
+
+
+
+.inputsection {
+    width: 619px;
+    height: 650px;
+    background: #FFFFFF;
+    padding: 125px 118px 140px 101px;
+    position: absolute;
+    right: 78px;
+    top: -25px;
+}
+
+.inputsection::after {
+    content: '';
+    width: 619px;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #3F51B5;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.inputtext {
+    font-family: "robotocond";
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 50px;
+    color: #353C48;
+
+}
+
+
+.inputemail {
+    position: relative;
+    margin-top: 50px;
+}
+
+.emailInput {
+    width: 400px;
+    height: 55px;
+    background: #F6F8FF;
+    border: 1px solid #dde8fd;
+    border-radius: 5px;
+    padding: 7px 0px 8px 20px;
+    position: relative;
+
+    /* border: none; */
+    /* margin-bottom: 35px; */
+}
+
+.emailInput:focus {
+    outline: none;
+}
+
+.emaillogo {
+    right: 15px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+.inputlabel {
+    margin-bottom: 10px;
+    display: block;
+    /* position: absolute; */
+}
+
+.inputpassword {
+    position: relative;
+    margin-top: 20px;
+}
+
+.passwordInput {
+    width: 400px;
+    height: 55px;
+    background: #F6F8FF;
+    border: 1px solid #dde8fd;
+    border-radius: 5px;
+    padding: 7px 0px 8px 20px;
+    position: relative;
+}
+.passwordInput:focus {
+    outline: none;
+}
+
+.passwordlabel {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.passwordlogo {
+    right: 15px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+.loginButton {
+    margin-top: 39px;
+    width: 400px;
+    height: 55px;
+    background: #3F51B5;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: "robotocond";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
 }
