@@ -6,7 +6,6 @@ const AppRouts = () => {
   return (
     <Switch>
       <Route exact path="/" component={Login} />
-      
     </Switch>
   );
 }

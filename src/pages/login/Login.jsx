@@ -4,8 +4,12 @@ import logo from "../../assets/images/logo_white.svg";
 import Input from "../../components/input/Input";
 import Email from "../../assets/images/Group 4email.svg";
 import Password from "../../assets/images/Group 7password.svg";
+import { Login_User } from "../../redux/action/UserAction";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
+  const dispatch = useDispatch()
+   const [PasswordShow, setPasswordShow] = useState(false);
   const [userData, setUserdata] = useState({
     username: "",
     password: "",
@@ -17,10 +21,18 @@ const Login = () => {
       [evt.target.name]: value
     });
   }
-  console.log(userData);
 
+    const showPassword = () => {
+      setPasswordShow(!PasswordShow);
+    };
+
+ 
+
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    dispatch(Login_User({userData}));
     
   };
   return (
@@ -55,7 +67,7 @@ const Login = () => {
                 <label className={style.inputlabel}>Email:</label>
                 <Input
                   type="text"
-                  placeholder="Email"
+                  placeholder="kenzi.lawson@example.com"
                   classname={`${style.emailInput}`}
                   handleChange={handleChange}
                   name="username"
@@ -65,13 +77,17 @@ const Login = () => {
               <div className={style.inputpassword}>
                 <label className={style.passwordlabel}>Password:</label>
                 <Input
-                  type="text"
-                  placeholder="Password"
+                  type={PasswordShow ? "text" : "password"}
+                  placeholder="********"
                   classname={`${style.passwordInput}`}
                   handleChange={handleChange}
                   name="password"
                 />
-                <img src={Password} className={style.passwordlogo} />
+                <img
+                  src={Password}
+                  className={style.passwordlogo}
+                  onClick={showPassword}
+                />
               </div>
               <button className={style.loginButton}>Login</button>
             </form>
