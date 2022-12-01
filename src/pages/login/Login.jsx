@@ -8,32 +8,34 @@ import { Login_User } from "../../redux/action/UserAction";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
-  const dispatch = useDispatch()
-   const [PasswordShow, setPasswordShow] = useState(false);
+  const dispatch = useDispatch();
+  const [error , setError] = useState(false)
+  const [PasswordShow, setPasswordShow] = useState(false);
   const [userData, setUserdata] = useState({
     username: "",
     password: "",
   });
+
+
+
   function handleChange(evt) {
     const value = evt.target.value;
     setUserdata({
       ...userData,
-      [evt.target.name]: value
+      [evt.target.name]: value,
     });
-  }
+  } 
 
-    const showPassword = () => {
-      setPasswordShow(!PasswordShow);
-    };
+  const showPassword = () => {
+    setPasswordShow(!PasswordShow);
+  };
 
- 
-
- 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    dispatch(Login_User({userData}));
-    
+    if (userData.username !== "" && userData.password !== "") {
+      dispatch(Login_User(userData));
+    }
+    setError(true);
   };
   return (
     <div className={style.maincontainer}>
@@ -73,6 +75,12 @@ const Login = () => {
                   name="username"
                 />
                 <img src={Email} className={style.emaillogo} />
+                {/* props.value === '' && props.button === true ? */}
+                {userData.username === "" && error === true ? (
+                   <p className={style.error}>please enter email</p>
+                ) : (
+                 ""
+                )}
               </div>
               <div className={style.inputpassword}>
                 <label className={style.passwordlabel}>Password:</label>
@@ -88,6 +96,11 @@ const Login = () => {
                   className={style.passwordlogo}
                   onClick={showPassword}
                 />
+                {userData.password === "" && error === true ? (
+                  <p className={style.error}>please enter password</p>
+                ) : (
+                  ""
+                )}
               </div>
               <button className={style.loginButton}>Login</button>
             </form>

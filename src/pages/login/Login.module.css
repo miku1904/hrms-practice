@@ -88,7 +88,9 @@ body {
 
 
 
-
+.error{
+    color: red;
+}
 
 
 .inputsection {
